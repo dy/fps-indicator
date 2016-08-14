@@ -1,0 +1,34 @@
+{
+  "name": "fps-indicator",
+  "version": "1.0.0",
+  "description": "Display tiny fps meter with customizable colors",
+  "main": "index.js",
+  "scripts": {
+    "test": "budo test.js",
+    "build": "browserify test.js -t bubleify -o demo/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfcreative/fps-indicator.git"
+  },
+  "keywords": [
+    "fps",
+    "indicator",
+    "meter",
+    "stats",
+    "performance"
+  ],
+  "author": "ΔY <dfcreative@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dfcreative/fps-indicator/issues"
+  },
+  "homepage": "https://github.com/dfcreative/fps-indicator#readme",
+  "dependencies": {
+    "raf": "^3.2.0",
+    "right-now": "^1.0.0"
+  },
+  "devDependencies": {
+    "bubleify": "^0.5.1"
+  }
+}
