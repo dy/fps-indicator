@@ -17,7 +17,7 @@ fps.element.style.color = 'red';
 
 //init with options
 let fps2 = createFps({
-	container: '#myElement',
+	container: '#my-element',
 	updatePeriod: 500,
 	maxFps: 80
 });
@@ -25,5 +25,5 @@ let fps2 = createFps({
 
 ## Similar
 
-> [stats.js](https://www.npmjs.com/package/stats.js) — oldschool fps meter for apps, no colors customization.
-> [fpsmeter](http://darsa.in/fpsmeter/) — good-looking fps meter, no npm package.
+> [stats.js](https://www.npmjs.com/package/stats.js) — oldschool fps meter for apps, no colors customization.<br/>
+> [fpsmeter](http://darsa.in/fpsmeter/) — good-looking fps meter, but no npm package.<br/>
