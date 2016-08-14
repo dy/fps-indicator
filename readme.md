@@ -9,11 +9,18 @@ Micro fps indicator for demo/tests.
 [![npm install fps-indicator](https://nodei.co/npm/fps-indicator.png?mini=true)](https://npmjs.org/package/fps-indicator/)
 
 ```js
-const createFps = require('fps');
-let fps = createFps({container: document.body});
+const createFps = require('fps-indicator');
+let fps = createFps();
 
 //to change color
 fps.element.style.color = 'red';
+
+//init with options
+let fps2 = createFps({
+	container: '#myElement',
+	updatePeriod: 500,
+	maxFps: 80
+});
 ```
 
 ## Similar

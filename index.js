@@ -14,7 +14,17 @@ function fps (opts) {
 
 	opts = opts || {};
 
-	this.container = opts.container || document.body || document.documentElement;
+	if (opts.container) {
+		if (typeof opts.container === 'string') {
+			this.container = document.querySelector(opts.container);
+		}
+		else {
+			this.container = opts.container;
+		}
+	}
+	else {
+		this.container = document.body || document.documentElement;
+	}
 
 	//init fps
 	this.element = document.createElement('div');
@@ -64,7 +74,7 @@ function fps (opts) {
 	let lastTime = 0;
 	let values = opts.values || Array(this.canvas.width);
 	let updatePeriod = opts.updatePeriod || 1000;
-	let maxFPS = opts.maxFPS || 100;
+	let maxFps = opts.maxFps || 100;
 
 	//enable update routine
 	let that = this;
@@ -75,7 +85,7 @@ function fps (opts) {
 		if (t - lastTime > updatePeriod) {
 			let color = that.color;
 			lastTime = t;
-			values.push(count / (maxFPS * updatePeriod * 0.001));
+			values.push(count / (maxFps * updatePeriod * 0.001));
 			values = values.slice(-w);
 			count = 0;
 
@@ -87,7 +97,7 @@ function fps (opts) {
 				ctx.fillRect(i, h - h * value, 1, h * value);
 			}
 
-			that.valueEl.innerHTML = (values[values.length - 1]*maxFPS).toFixed(1);
+			that.valueEl.innerHTML = (values[values.length - 1]*maxFps).toFixed(1);
 		}
 
 		raf(measure);
