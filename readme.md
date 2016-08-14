@@ -1,4 +1,4 @@
-# fps [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
+# fps-indicator [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
 Micro fps indicator for demo/tests.
 
