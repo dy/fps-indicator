@@ -43,7 +43,11 @@ function fps (opts) {
 
 	this.element.style.cssText = `
 		line-height: 1;
-	`
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+	`;
 
 	this.canvas.style.cssText = `
 		position: relative;
