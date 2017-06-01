@@ -26,7 +26,8 @@
   "homepage": "https://github.com/dfcreative/fps-indicator#readme",
   "dependencies": {
     "raf": "^3.2.0",
-    "right-now": "^1.0.0"
+    "right-now": "^1.0.0",
+    "to-css": "^1.2.1"
   },
   "devDependencies": {
     "bubleify": "^0.5.1"

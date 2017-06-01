@@ -4,15 +4,19 @@
 
 const raf = require('raf');
 const now = require('right-now');
+const css = require('to-css')
 
 module.exports = fps;
 
 
 
-function fps (opts) {
-	if (!(this instanceof fps)) return new fps(opts);
+function fps (opts, pos) {
+	if (!(this instanceof fps)) return new fps(opts, pos);
 
+	if (typeof opts === 'string') opts = {color: opts}
 	opts = opts || {};
+
+	if (typeof pos === 'string') opts.position = pos
 
 	if (opts.container) {
 		if (typeof opts.container === 'string') {
@@ -41,13 +45,38 @@ function fps (opts) {
 	this.valueEl = this.element.querySelector('.fps-value');
 	this.bgEl = this.element.querySelector('.fps-bg');
 
+	let style = opts.css || opts.style || ``
+	if (typeof style === 'object') style = css(style)
+
+	let posCss = ``
+	switch (opts.position) {
+		case 'top-left':
+			posCss = `left: 0; top: 0;`
+			break;
+		case 'top-right':
+			posCss = `right: 0; top: 0;`
+			break;
+		case 'bottom-right':
+			posCss = `right: 0; bottom: 0;`
+			break;
+		case 'bottom-left':
+			posCss = `left: 0; bottom: 0;`
+			break;
+		default:
+			posCss = `left: 0; bottom: 0;`
+	}
+
 	this.element.style.cssText = `
 		line-height: 1;
 		position: absolute;
+		font-family: Roboto, sans-serif;
 		z-index: 1;
-		top: 0;
-		right: 0;
-	`;
+		font-weight: 300;
+		font-size: small;
+		padding: 1rem;
+		${posCss}`
+	+ (opts.color ? `color: ${opts.color}` : ``)
+	+ (style);
 
 	this.canvas.style.cssText = `
 		position: relative;
@@ -77,8 +106,8 @@ function fps (opts) {
 	let count = 0;
 	let lastTime = 0;
 	let values = opts.values || Array(this.canvas.width);
-	let updatePeriod = opts.updatePeriod || 1000;
-	let maxFps = opts.maxFps || 100;
+	let period = opts.period || 1000;
+	let max = opts.max || 100;
 
 	//enable update routine
 	let that = this;
@@ -86,10 +115,10 @@ function fps (opts) {
 		count++;
 		let t = now();
 
-		if (t - lastTime > updatePeriod) {
+		if (t - lastTime > period) {
 			let color = that.color;
 			lastTime = t;
-			values.push(count / (maxFps * updatePeriod * 0.001));
+			values.push(count / (max * period * 0.001));
 			values = values.slice(-w);
 			count = 0;
 
@@ -101,7 +130,7 @@ function fps (opts) {
 				ctx.fillRect(i, h - h * value, 1, h * value);
 			}
 
-			that.valueEl.innerHTML = (values[values.length - 1]*maxFps).toFixed(1);
+			that.valueEl.innerHTML = (values[values.length - 1]*max).toFixed(1);
 		}
 
 		raf(measure);
