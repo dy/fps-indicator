@@ -1,6 +1,8 @@
 /**
  * @module fps-indicator
  */
+'use strict'
+
 
 const raf = require('raf');
 const now = require('right-now');
@@ -114,7 +116,6 @@ function fps (opts) {
 		let t = now();
 
 		if (t - lastTime > period) {
-			let color = that.color;
 			lastTime = t;
 			values.push(count / (max * period * 0.001));
 			values = values.slice(-w);
