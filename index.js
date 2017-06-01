@@ -10,13 +10,11 @@ module.exports = fps;
 
 
 
-function fps (opts, pos) {
-	if (!(this instanceof fps)) return new fps(opts, pos);
+function fps (opts) {
+	if (!(this instanceof fps)) return new fps(opts);
 
-	if (typeof opts === 'string') opts = {color: opts}
+	if (typeof opts === 'string') opts = {position: opts}
 	opts = opts || {};
-
-	if (typeof pos === 'string') opts.position = pos
 
 	if (opts.container) {
 		if (typeof opts.container === 'string') {

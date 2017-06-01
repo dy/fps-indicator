@@ -15,16 +15,16 @@ let fps = createFps();
 
 ## API
 
-### var fps2 = createFps(color|options?)
+### var fps = createFps(position?|options?)
 
 | Option | Description |
 |---|---|
-| `container` | Selector or element where to place, by default `document.body` |
-| `period` | Update period in ms, defaults to 500 |
-| `max` | Max value of FPS, corresponding to upper bound, default is `90` |
+| `container` | Selector or element where to place, by default `document.body`. |
+| `period` | Update period in ms, defaults to `500`. |
+| `max` | Max value of FPS, corresponding to upper bound, default is `90`. |
 | `color` | Color of indicator, by default is inherited. |
-| `position` | `top-left`, `top-right`, `bottom-left`, `bottom-right` |
-| `style` | CSS style string or object for the element. |
+| `position` | `top-left`, `top-right`, `bottom-left`, `bottom-right`. |
+| `style` | CSS style string or [css object](https://npmjs.org/package/to-css). Eg. `fps({style: `padding: 20px; text-shadow: 0 0 2px black`})` |
 
 ## Similar
 
