@@ -68,7 +68,7 @@ function fps (opts) {
 
 	this.element.style.cssText = `
 		line-height: 1;
-		position: absolute;
+		position: fixed;
 		font-family: Roboto, sans-serif;
 		z-index: 1;
 		font-weight: 300;
