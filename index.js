@@ -32,7 +32,7 @@ function fps (opts) {
 
 	//init fps
 	this.element = document.createElement('div');
-	this.element.classList.add('fps');
+	this.element.className = 'fps';
 	this.element.innerHTML = `
 		<div class="fps-bg"></div>
 		<canvas class="fps-canvas"></canvas>
