@@ -17,9 +17,11 @@ let fps = createFps();
 
 ### var fps = createFps(position?|options?)
 
+Create fps indicator from `position` string or `options` object:
+
 | Option | Description |
 |---|---|
-| `container` | Selector or element where to place, by default `document.body`. |
+| `container` | Selector or element to append, by default `document.body`. |
 | `period` | Update period in ms, defaults to `500`. |
 | `max` | Max value of FPS, corresponding to upper bound, default is `90`. |
 | `color` | Color of indicator, by default is inherited. |
