@@ -48,7 +48,7 @@ function fps (opts) {
 	var style = opts.css || opts.style || ''
 	if (typeof style === 'object') style = css(style)
 
-	var posCss = ``
+	var posCss = ''
 	switch (opts.position) {
 		case 'top-left':
 			posCss = 'left: 0; top: 0;'
