@@ -1,6 +1,6 @@
 {
   "name": "fps-indicator",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Display tiny fps meter with customizable colors",
   "main": "index.js",
   "scripts": {
