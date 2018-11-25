@@ -15,7 +15,10 @@ module.exports = fps
 function fps (opts) {
 	if (!(this instanceof fps)) return new fps(opts)
 
-	if (typeof opts === 'string') opts = {position: opts}
+	if (typeof opts === 'string') {
+		if (positions[opts]) opts = {position: opts}
+		else opts = {container: opts}
+	}
 	opts = opts || {}
 
 	if (opts.container) {
@@ -49,22 +52,7 @@ function fps (opts) {
 	if (typeof style === 'object') style = css(style)
 
 	var posCss = ''
-	switch (opts.position) {
-		case 'top-left':
-			posCss = 'left: 0; top: 0;'
-			break
-		case 'top-right':
-			posCss = 'right: 0; top: 0;'
-			break
-		case 'bottom-right':
-			posCss = 'right: 0; bottom: 0;'
-			break
-		case 'bottom-left':
-			posCss = 'left: 0; bottom: 0;'
-			break
-		default:
-			posCss = 'left: 0; bottom: 0;'
-	}
+	posCss = positions[opts.position] || positions['top-left']
 
 	this.element.style.cssText = [
 		'line-height: 1;',
@@ -135,4 +123,12 @@ function fps (opts) {
 
 		raf(measure)
 	})
+}
+
+
+var positions = {
+	'top-left': 'left: 0; top: 0;',
+	'top-right': 'right: 0; top: 0;',
+	'bottom-right': 'right: 0; bottom: 0;',
+	'bottom-left': 'left: 0; bottom: 0;'
 }

@@ -1,7 +1,7 @@
 {
   "name": "fps-indicator",
   "version": "1.2.1",
-  "description": "Display tiny fps meter with customizable colors",
+  "description": "Tiny fps meter with customizable colors",
   "main": "index.js",
   "scripts": {
     "test": "budo test.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dfcreative/fps-indicator.git"
+    "url": "git+https://github.com/dy/fps-indicator.git"
   },
   "keywords": [
     "fps",
@@ -21,15 +21,12 @@
   "author": "ΔY <dfcreative@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dfcreative/fps-indicator/issues"
+    "url": "https://github.com/dy/fps-indicator/issues"
   },
-  "homepage": "https://github.com/dfcreative/fps-indicator#readme",
+  "homepage": "https://github.com/dy/fps-indicator#readme",
   "dependencies": {
-    "raf": "^3.2.0",
+    "raf": "^3.4.1",
     "right-now": "^1.0.0",
     "to-css": "^1.2.1"
-  },
-  "devDependencies": {
-    "bubleify": "^0.5.1"
   }
 }

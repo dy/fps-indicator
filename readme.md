@@ -2,7 +2,7 @@
 
 Micro fps indicator for demo/tests.
 
-[![fps-indicator](https://raw.githubusercontent.com/dfcreative/fps-indicator/gh-pages/preview.png "fps-indicator")](http://dfcreative.github.io/fps-indicator/)
+[![fps-indicator](https://raw.githubusercontent.com/dy/fps-indicator/gh-pages/preview.png "fps-indicator")](http://dy.github.io/fps-indicator/)
 
 ## Usage
 
@@ -15,7 +15,7 @@ let fps = createFps();
 
 ## API
 
-### var fps = createFps(position?|options?)
+### var fps = createFps(container|options?)
 
 Create fps indicator from `position` string or `options` object:
 

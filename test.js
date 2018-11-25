@@ -1,8 +1,6 @@
 const createFps = require('./');
 
-let fps = createFps({
-
-});
+let fps = createFps('bottom-right');
 
 setTimeout(() => {
 	fps.element.style.color = 'red'
